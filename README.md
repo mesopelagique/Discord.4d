@@ -41,6 +41,8 @@ New object("name";"Inline field title";"value";"Some value here";"inline";True)\
 .addField(New object("name";"Inline field title";"value";"Some value here";"inline";True))\
 .setImage($imageUrl)\
 .setFooter(New object("text";"Some footer text here";"url";"https://fr.4d.com/sites/default/files/unknown_1.png"))
+
+$result:=$hook.send($exampleEmbed)
 ```
 
 > TIPS: You don't need to include all the elements showcased above. If you want a simpler embed, just leave some out.
