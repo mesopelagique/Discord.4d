@@ -51,3 +51,13 @@ Function send
 	$code:=HTTP Request:C1158(HTTP POST method:K71:2;This:C1470.url();$body;$response)
 	
 	$0:=$response
+	
+Function webhook
+	C_OBJECT:C1216($response)
+	C_LONGINT:C283($code)
+	
+	C_TEXT:C284($url)
+	$code:=HTTP Request:C1158(HTTP GET method:K71:1;This:C1470.url();"";$response)
+	If ($code=200)
+		$0:=cs:C1710.Webhook.new($response;This:C1470)
+	End if 

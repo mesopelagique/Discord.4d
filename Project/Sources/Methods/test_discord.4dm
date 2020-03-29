@@ -1,8 +1,11 @@
 //%attributes = {}
-C_OBJECT:C1216($config;$hook;$exampleEmbed;$result)
+C_OBJECT:C1216($config;$hook;$webhook;$exampleEmbed;$result)
 
 $config:=JSON Parse:C1218(Folder:C1567(fk user preferences folder:K87:10).folder("Discord.4d").file("config.json").getText())
 $hook:=Discord .WebhookClient.new($config.id;$config.token)
+
+$webhook:=$hook.webhook()
+ASSERT:C1129($webhook#Null:C1517;"Cannot get webhook information. Maybe not configured")
 
   // send a simple message
 $result:=$hook.send("Welcome To The Twilight Zone")
@@ -25,3 +28,4 @@ New object:C1471("name";"Inline field title";"value";"Some value here";"inline";
 .setImage("https://fr.4d.com/sites/default/files/unknown_1.png")\
 .setFooter(New object:C1471("text";"Some footer text here";"url";"https://fr.4d.com/sites/default/files/unknown_1.png"))
 $result:=$hook.send($exampleEmbed)
+

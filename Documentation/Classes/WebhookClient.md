@@ -49,3 +49,7 @@ $result:=$hook.send($exampleEmbed)
 ```
 
 For more fancy stuff see [MessageEmbed](MessageEmbed.md)
+
+## Get webhook information
+
+See [Webhook documentation](Webhook.md)
