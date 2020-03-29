@@ -6,5 +6,5 @@
 ## Get a webhook from client
 
 ```4d
-$hook:=hook.webhook()
+$webhook:=$hook.webhook()
 ```
