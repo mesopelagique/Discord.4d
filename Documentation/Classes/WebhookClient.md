@@ -1,7 +1,9 @@
-﻿<!-- Type here your summary -->
+<!-- Type here your summary -->
 # WebhookClient
 
-A discord webhook provide and url to send message.
+[Webhooks](https://discordapp.com/developers/docs/resources/webhook) are a low-effort way to post messages to channels in Discord.
+
+A Webhook provide an url which contains id and token.
 
 ```
 https://discordapp.com/api/webhooks/<id>/<token>
