@@ -1,0 +1,18 @@
+﻿{
+	"classes": {
+		"classes": [
+			"MessageEmbed"
+		]
+	},
+	"test": {
+		"methods": [
+			"test_discord"
+		]
+	},
+	"utils": {
+		"methods": [
+			"resolveColor"
+		]
+	},
+	"trash": {}
+}
