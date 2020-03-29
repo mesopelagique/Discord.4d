@@ -1,11 +1,27 @@
 //%attributes = {}
-C_OBJECT:C1216($config;$hook;$webhook;$exampleEmbed;$result)
+C_OBJECT:C1216($config;$configFolder;$bot;$gateway;$hook;$webhook;$exampleEmbed;$result)
+$configFolder:=Folder:C1567(fk user preferences folder:K87:10).folder("Discord.4d")
 
-$config:=JSON Parse:C1218(Folder:C1567(fk user preferences folder:K87:10).folder("Discord.4d").file("config.json").getText())
+/**
+* client
+**/
+$config:=JSON Parse:C1218($configFolder.file("config.redmine.json").getText())
+$bot:=Discord .Client.new()
+$bot.login($config.token)
+$gateway:=$bot.gateway(New object:C1471("bot";True:C214))
+
+/**
+* WEB HOOK
+*/
+
+$config:=JSON Parse:C1218($configFolder.file("config.json").getText())
 $hook:=Discord .WebhookClient.new($config.id;$config.token)
 
 $webhook:=$hook.webhook()
 ASSERT:C1129($webhook#Null:C1517;"Cannot get webhook information. Maybe not configured")
+
+  //$channel:=$hook.channel()
+  //ASSERT($channel#Null;"Cannot get channel information. Maybe not authentified or rate limited")
 
   // send a simple message
 $result:=$hook.send("Welcome To The Twilight Zone")

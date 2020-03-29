@@ -1,6 +1,8 @@
 
+Class extends BaseClient
 
 Class constructor
+	Super:C1705()
 	C_VARIANT:C1683($1;$2)
 	Case of 
 		: (Value type:C1509($1)=Is object:K8:27)
@@ -11,7 +13,7 @@ Class constructor
 				This:C1470.id:=$1
 				This:C1470.token:=$2
 			Else   // expect url
-				This:C1470.id:=Replace string:C233($1;"https://discordapp.com/api/webhooks/";"")
+				This:C1470.id:=Replace string:C233($1;This:C1470.baseURL+"webhooks/";"")
 				C_COLLECTION:C1488($tmpCol)
 				$tmpCol:=Split string:C1554(This:C1470.id;"/")
 				If ($tmpCol.length=2)
@@ -27,7 +29,7 @@ Class constructor
 	
 Function url
 	C_TEXT:C284($0)
-	$0:="https://discordapp.com/api/webhooks/"+String:C10(This:C1470.id)+"/"+String:C10(This:C1470.token)
+	$0:=This:C1470.baseURL+"webhooks/"+String:C10(This:C1470.id)+"/"+String:C10(This:C1470.token)
 	
 Function send
 	C_VARIANT:C1683($1)
@@ -53,11 +55,36 @@ Function send
 	$0:=$response
 	
 Function webhook
+	C_OBJECT:C1216($0)
 	C_OBJECT:C1216($response)
 	C_LONGINT:C283($code)
 	
-	C_TEXT:C284($url)
 	$code:=HTTP Request:C1158(HTTP GET method:K71:1;This:C1470.url();"";$response)
 	If ($code=200)
 		$0:=cs:C1710.Webhook.new($response;This:C1470)
+	Else 
+		$0:=$response
 	End if 
+	
+Function channel
+	C_OBJECT:C1216($response;$webhook;$0)
+	C_LONGINT:C283($code)
+	
+	$webhook:=This:C1470.webhook()
+	If ($webhook#Null:C1517)
+		C_TEXT:C284($url)
+		$url:=This:C1470.baseURL+"channels/"+String:C10($webhook.channel_id)
+		
+		ARRAY TEXT:C222($headerKeys;1)
+		ARRAY TEXT:C222($headerValues;1)
+		$headerKeys{1}:="Authorization"
+		$headerValues{1}:="Bot "+This:C1470.token
+		
+		$code:=HTTP Request:C1158(HTTP GET method:K71:1;$url;"";$response;$headerKeys;$headerValues)
+		If ($code=200)
+			$0:=cs:C1710.Channel.new($response)
+		Else 
+			$0:=$response
+		End if 
+	End if 
+	

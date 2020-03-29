@@ -1,19 +1,45 @@
 ﻿{
 	"classes": {
+		"groups": [
+			"client"
+		],
 		"classes": [
+			"Channel",
+			"Gateway",
 			"MessageEmbed",
-			"Webhook",
+			"Webhook"
+		]
+	},
+	"client": {
+		"groups": [
+			"websocket"
+		],
+		"classes": [
+			"BaseClient",
+			"Client",
 			"WebhookClient"
 		]
 	},
 	"test": {
 		"methods": [
-			"test_discord"
+			"test_discord",
+			"test_websocket",
+			"test_websocket_callback"
 		]
 	},
 	"utils": {
 		"methods": [
+			"copyProps",
 			"resolveColor"
+		]
+	},
+	"websocket": {
+		"methods": [
+			"onWebSocketEvent"
+		],
+		"classes": [
+			"WebSocket",
+			"WebSocketManager"
 		]
 	},
 	"trash": {}
