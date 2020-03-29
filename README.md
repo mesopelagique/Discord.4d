@@ -1,4 +1,10 @@
-﻿# Discord.4d
+# Discord.4d
+ 
+[![language](https://img.shields.io/static/v1?label=language&message=4d&color=blue)](https://developer.4d.com/)
+[![language-top](https://img.shields.io/github/languages/top/mesopelagique/Discord.4d.svg)](https://developer.4d.com/)
+![code-size](https://img.shields.io/github/languages/code-size/mesopelagique/Discord.4d.svg)
+[![release](https://img.shields.io/github/v/release/mesopelagique/Discord.4d)](https://github.com/mesopelagique/Discord.4d/releases/latest)
+[![license](https://img.shields.io/github/license/mesopelagique/Discord.4d)](LICENSE)
 
 Send messages to discord using 4D.
 
