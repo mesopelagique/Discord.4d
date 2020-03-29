@@ -1,7 +1,8 @@
 ﻿{
 	"classes": {
 		"classes": [
-			"MessageEmbed"
+			"MessageEmbed",
+			"WebhookClient"
 		]
 	},
 	"test": {
