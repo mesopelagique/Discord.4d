@@ -7,4 +7,6 @@
 
 ```4d
 $webhook:=$hook.webhook() // with $hook a Dicord.WebhookClient class
+
+$name:=$webhook.name
 ```
