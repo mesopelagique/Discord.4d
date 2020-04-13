@@ -5,6 +5,7 @@
 ![code-size](https://img.shields.io/github/languages/code-size/mesopelagique/Discord.4d.svg)
 [![release](https://img.shields.io/github/v/release/mesopelagique/Discord.4d)](https://github.com/mesopelagique/Discord.4d/releases/latest)
 [![license](https://img.shields.io/github/license/mesopelagique/Discord.4d)](LICENSE)
+[![discord][discord-shield]][discord-url]
 
 Send messages to discord using 4D.
 
@@ -52,3 +53,6 @@ $result:=$hook.send($exampleEmbed)
 ```
 
 > TIPS: You don't need to include all the elements showcased above. If you want a simpler embed, just leave some out.
+
+[discord-shield]: https://img.shields.io/badge/chat-discord-7289DA?logo=discord&style=flat
+[discord-url]: https://discord.gg/dVTqZHr
