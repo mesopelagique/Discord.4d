@@ -54,5 +54,9 @@ $result:=$hook.send($exampleEmbed)
 
 > TIPS: You don't need to include all the elements showcased above. If you want a simpler embed, just leave some out.
 
+---
+
+[<img src="https://mesopelagique.github.io/quatred.png" alt="mesopelagique"/>](https://mesopelagique.github.io/)
+
 [discord-shield]: https://img.shields.io/badge/chat-discord-7289DA?logo=discord&style=flat
 [discord-url]: https://discord.gg/dVTqZHr
