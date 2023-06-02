@@ -1,0 +1,262 @@
+{
+	"_method_": {
+		"Discord": {
+			"Syntax": "**Discord**()",
+			"Params": [],
+			"Summary": ""
+		}
+	},
+	"cs.Discord": {
+		"WebhookClient": {
+			"new()": {
+				"Syntax": "**.new**()",
+				"Params": [],
+				"Summary": ""
+			}
+		},
+		"Webhook": {
+			"new()": {
+				"Syntax": "**.new**( *data* : Object; *client* : Object )",
+				"Params": [
+					[
+						"data",
+						"Object",
+						"->"
+					],
+					[
+						"client",
+						"Object",
+						"->"
+					]
+				],
+				"Summary": ""
+			}
+		}
+	},
+	"WebhookClient": {
+		"webhook()": {
+			"Syntax": "**.webhook**() : cs.Discord.Webhook",
+			"Params": [
+				[
+					"",
+					"cs.Discord.Webhook",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"send()": {
+			"Syntax": "**.send**( *message* : Variant )->response : Object",
+			"Params": [
+				[
+					"message",
+					"Variant",
+					"->"
+				],
+				[
+					"response",
+					"Object",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"url()": {
+			"Syntax": "**.url**() : Text",
+			"Params": [
+				[
+					"",
+					"Text",
+					"<-"
+				]
+			],
+			"Summary": ""
+		}
+	},
+	"MessageEmbed": {
+		"addFields()": {
+			"Syntax": "**.addFields**( *fields* : Collection ) : cs.Discord.MessageEmbed",
+			"Params": [
+				[
+					"fields",
+					"Collection",
+					"->"
+				],
+				[
+					"",
+					"cs.Discord.MessageEmbed",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"setDescription()": {
+			"Syntax": "**.setDescription**( *description* : Text ) : cs.Discord.MessageEmbed",
+			"Params": [
+				[
+					"description",
+					"Text",
+					"->"
+				],
+				[
+					"",
+					"cs.Discord.MessageEmbed",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"toJSON()": {
+			"Syntax": "**.toJSON**() : Text",
+			"Params": [
+				[
+					"",
+					"Text",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"setFooter()": {
+			"Syntax": "**.setFooter**( *footer* : Object ) : cs.Discord.MessageEmbed",
+			"Params": [
+				[
+					"footer",
+					"Object",
+					"->"
+				],
+				[
+					"",
+					"cs.Discord.MessageEmbed",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"setThumbnail()": {
+			"Syntax": "**.setThumbnail**( *url* : Text ) : cs.Discord.MessageEmbed",
+			"Params": [
+				[
+					"url",
+					"Text",
+					"->"
+				],
+				[
+					"",
+					"cs.Discord.MessageEmbed",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"setAuthor()": {
+			"Syntax": "**.setAuthor**( *author* : Variant ) : cs.Discord.MessageEmbed",
+			"Params": [
+				[
+					"author",
+					"Variant",
+					"->"
+				],
+				[
+					"",
+					"cs.Discord.MessageEmbed",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"addField()": {
+			"Syntax": "**.addField**( *field* : Object ) : cs.Discord.MessageEmbed",
+			"Params": [
+				[
+					"field",
+					"Object",
+					"->"
+				],
+				[
+					"",
+					"cs.Discord.MessageEmbed",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"setTitle()": {
+			"Syntax": "**.setTitle**( *title* : Text ) : cs.Discord.MessageEmbed",
+			"Params": [
+				[
+					"title",
+					"Text",
+					"->"
+				],
+				[
+					"",
+					"cs.Discord.MessageEmbed",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"setImage()": {
+			"Syntax": "**.setImage**( *image* : Text ) : cs.Discord.MessageEmbed",
+			"Params": [
+				[
+					"image",
+					"Text",
+					"->"
+				],
+				[
+					"",
+					"cs.Discord.MessageEmbed",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"setURL()": {
+			"Syntax": "**.setURL**( *url* : Text ) : cs.Discord.MessageEmbed",
+			"Params": [
+				[
+					"url",
+					"Text",
+					"->"
+				],
+				[
+					"",
+					"cs.Discord.MessageEmbed",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"setColor()": {
+			"Syntax": "**.setColor**( *color* : Variant ) : cs.Discord.MessageEmbed",
+			"Params": [
+				[
+					"color",
+					"Variant",
+					"->"
+				],
+				[
+					"",
+					"cs.Discord.MessageEmbed",
+					"<-"
+				]
+			],
+			"Summary": ""
+		}
+	},
+	"Webhook": {
+		"client()": {
+			"Syntax": "**.client**() : cs.Discord.WebhookClient",
+			"Params": [
+				[
+					"",
+					"cs.Discord.WebhookClient",
+					"<-"
+				]
+			],
+			"Summary": ""
+		}
+	}
+}

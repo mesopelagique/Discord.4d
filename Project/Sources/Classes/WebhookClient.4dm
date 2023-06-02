@@ -1,7 +1,7 @@
 
 
 Class constructor
-	C_VARIANT:C1683($1;$2)
+	C_VARIANT:C1683($1; $2)
 	Case of 
 		: (Value type:C1509($1)=Is object:K8:27)
 			This:C1470.id:=$1.id
@@ -11,53 +11,45 @@ Class constructor
 				This:C1470.id:=$1
 				This:C1470.token:=$2
 			Else   // expect url
-				This:C1470.id:=Replace string:C233($1;"https://discordapp.com/api/webhooks/";"")
+				This:C1470.id:=Replace string:C233($1; "https://discordapp.com/api/webhooks/"; "")
 				C_COLLECTION:C1488($tmpCol)
-				$tmpCol:=Split string:C1554(This:C1470.id;"/")
+				$tmpCol:=Split string:C1554(This:C1470.id; "/")
 				If ($tmpCol.length=2)
 					This:C1470.id:=$tmpCol[0]
 					This:C1470.token:=$tmpCol[1]
 				Else 
-					ASSERT:C1129(False:C215;"In valid webhook url")
+					ASSERT:C1129(False:C215; "In valid webhook url")
 				End if 
 			End if 
 		Else 
-			ASSERT:C1129(False:C215;"Wrong webhook client parameter. Must be an object or string")
+			ASSERT:C1129(False:C215; "Wrong webhook client parameter. Must be an object or string")
 	End case 
 	
-Function url
-	C_TEXT:C284($0)
-	$0:="https://discordapp.com/api/webhooks/"+String:C10(This:C1470.id)+"/"+String:C10(This:C1470.token)
+Function url() : Text
+	return "https://discordapp.com/api/webhooks/"+String:C10(This:C1470.id)+"/"+String:C10(This:C1470.token)
 	
-Function send
-	C_VARIANT:C1683($1)
-	C_OBJECT:C1216($0)
-	C_OBJECT:C1216($body)
+Function send($message : Variant)->$response : Object
 	
-	If (Value type:C1509($1)=Is object:K8:27)
-		If (OB Class:C1730($1).name="MessageEmbed")
-			$body:=New object:C1471("embeds";New collection:C1472($1))
+	var $body : Object
+	If (Value type:C1509($message)=Is object:K8:27)
+		If (OB Class:C1730($message).name="MessageEmbed")
+			$body:=New object:C1471("embeds"; New collection:C1472($message))
 		Else 
-			$body:=$1
+			$body:=$message
 		End if 
 	Else 
 		
-		$body:=New object:C1471("content";String:C10($1))
+		$body:=New object:C1471("content"; String:C10($message))
 		
 	End if 
 	
-	C_OBJECT:C1216($response)
-	C_LONGINT:C283($code)
-	$code:=HTTP Request:C1158(HTTP POST method:K71:2;This:C1470.url();$body;$response)
+	var $code : Integer
+	$code:=HTTP Request:C1158(HTTP POST method:K71:2; This:C1470.url(); $body; $response)
 	
-	$0:=$response
-	
-Function webhook
-	C_OBJECT:C1216($response)
-	C_LONGINT:C283($code)
-	
-	C_TEXT:C284($url)
-	$code:=HTTP Request:C1158(HTTP GET method:K71:1;This:C1470.url();"";$response)
+Function webhook() : cs:C1710.Webhook
+	var $response : Object
+	var $code : Integer
+	$code:=HTTP Request:C1158(HTTP GET method:K71:1; This:C1470.url(); ""; $response)
 	If ($code=200)
-		$0:=cs:C1710.Webhook.new($response;This:C1470)
+		return cs:C1710.Webhook.new($response; This:C1470)
 	End if 
