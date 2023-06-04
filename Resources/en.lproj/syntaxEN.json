@@ -6,73 +6,6 @@
 			"Summary": ""
 		}
 	},
-	"cs.Discord": {
-		"WebhookClient": {
-			"new()": {
-				"Syntax": "**.new**()",
-				"Params": [],
-				"Summary": ""
-			}
-		},
-		"Webhook": {
-			"new()": {
-				"Syntax": "**.new**( *data* : Object; *client* : Object )",
-				"Params": [
-					[
-						"data",
-						"Object",
-						"->"
-					],
-					[
-						"client",
-						"Object",
-						"->"
-					]
-				],
-				"Summary": ""
-			}
-		}
-	},
-	"WebhookClient": {
-		"webhook()": {
-			"Syntax": "**.webhook**() : cs.Discord.Webhook",
-			"Params": [
-				[
-					"",
-					"cs.Discord.Webhook",
-					"<-"
-				]
-			],
-			"Summary": ""
-		},
-		"send()": {
-			"Syntax": "**.send**( *message* : Variant )->response : Object",
-			"Params": [
-				[
-					"message",
-					"Variant",
-					"->"
-				],
-				[
-					"response",
-					"Object",
-					"<-"
-				]
-			],
-			"Summary": ""
-		},
-		"url()": {
-			"Syntax": "**.url**() : Text",
-			"Params": [
-				[
-					"",
-					"Text",
-					"<-"
-				]
-			],
-			"Summary": ""
-		}
-	},
 	"MessageEmbed": {
 		"addFields()": {
 			"Syntax": "**.addFields**( *fields* : Collection ) : cs.Discord.MessageEmbed",
@@ -246,6 +179,40 @@
 			"Summary": ""
 		}
 	},
+	"cs.Discord": {
+		"Webhook": {
+			"new()": {
+				"Syntax": "**.new**( *data* : Object; *client* : Object )",
+				"Params": [
+					[
+						"data",
+						"Object",
+						"->"
+					],
+					[
+						"client",
+						"Object",
+						"->"
+					]
+				],
+				"Summary": ""
+			}
+		},
+		"BotClient": {
+			"new()": {
+				"Syntax": "**.new**()",
+				"Params": [],
+				"Summary": ""
+			}
+		},
+		"WebhookClient": {
+			"new()": {
+				"Syntax": "**.new**()",
+				"Params": [],
+				"Summary": ""
+			}
+		}
+	},
 	"Webhook": {
 		"client()": {
 			"Syntax": "**.client**() : cs.Discord.WebhookClient",
@@ -253,6 +220,130 @@
 				[
 					"",
 					"cs.Discord.WebhookClient",
+					"<-"
+				]
+			],
+			"Summary": ""
+		}
+	},
+	"BotClient": {
+		"disconnect()": {
+			"Syntax": "**.disconnect**()",
+			"Params": [],
+			"Summary": ""
+		},
+		"onError()": {
+			"Syntax": "**.onError**( *wss* : Object; *param* : Object )",
+			"Params": [
+				[
+					"wss",
+					"Object",
+					"->"
+				],
+				[
+					"param",
+					"Object",
+					"->"
+				]
+			],
+			"Summary": ""
+		},
+		"onTerminate()": {
+			"Syntax": "**.onTerminate**()",
+			"Params": [],
+			"Summary": ""
+		},
+		"onOpen()": {
+			"Syntax": "**.onOpen**( *wss* : Object; *param* : Object )",
+			"Params": [
+				[
+					"wss",
+					"Object",
+					"->"
+				],
+				[
+					"param",
+					"Object",
+					"->"
+				]
+			],
+			"Summary": ""
+		},
+		"onMessage()": {
+			"Syntax": "**.onMessage**( *wss* : Object; *object* : Object ) : Object",
+			"Params": [
+				[
+					"wss",
+					"Object",
+					"->"
+				],
+				[
+					"object",
+					"Object",
+					"->"
+				],
+				[
+					"",
+					"Object",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"send()": {
+			"Syntax": "**.send**( *object* : Object )",
+			"Params": [
+				[
+					"object",
+					"Object",
+					"->"
+				]
+			],
+			"Summary": ""
+		},
+		"connect()": {
+			"Syntax": "**.connect**()",
+			"Params": [],
+			"Summary": ""
+		},
+		"client": {
+			"Syntax": "client : 4D.WebSocket"
+		}
+	},
+	"WebhookClient": {
+		"webhook()": {
+			"Syntax": "**.webhook**() : cs.Discord.Webhook",
+			"Params": [
+				[
+					"",
+					"cs.Discord.Webhook",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"send()": {
+			"Syntax": "**.send**( *message* : Variant )->response : Object",
+			"Params": [
+				[
+					"message",
+					"Variant",
+					"->"
+				],
+				[
+					"response",
+					"Object",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"url()": {
+			"Syntax": "**.url**() : Text",
+			"Params": [
+				[
+					"",
+					"Text",
 					"<-"
 				]
 			],

@@ -1,6 +1,7 @@
-﻿{
+{
 	"classes": {
 		"classes": [
+			"BotClient",
 			"MessageEmbed",
 			"Webhook",
 			"WebhookClient"
@@ -8,6 +9,7 @@
 	},
 	"test": {
 		"methods": [
+			"test_bot",
 			"test_discord"
 		]
 	},
